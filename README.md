@@ -1,8 +1,8 @@
 # Capstone-Project-CSD-186
-##Capstone Project Tim CSD-186 Program SIB Machine Learning dan Front-End Web
-###Tema yang dipilih: [Utilitas]
-###Judul Proyek: [Sistem Klasifikasi Harga Smartphone Berdasarkan Spesifikasi dan Ekspansinya] 
-###Executive Summary:
+## Capstone Project Tim CSD-186 Program SIB Machine Learning dan Front-End Web
+### Tema yang dipilih: [Utilitas]
+### Judul Proyek: [Sistem Klasifikasi Harga Smartphone Berdasarkan Spesifikasi dan Ekspansinya] 
+### Executive Summary:
 Semakin banyaknya perusahaan-perusahaan pembuat produk handphone atau smartphone, membuat produsen serta konsumen harus dapat menyesuaikan produk terhadap finansial.
 Apa yang menjadi tolak ukur utama dalam pendistribusian produk?
 Siapa yang terlibat dalam penyesuaian finansial produk?
