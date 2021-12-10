@@ -437,4 +437,4 @@ df_Smartphone
 
 """## Convert Dataframe to .csv file"""
 
-df_Smartphone.to_csv(r'/content/smartphone_specs.csv')
+df_Smartphone.to_csv(r'/content/smartphone_specs.csv', index=False, header=True)
