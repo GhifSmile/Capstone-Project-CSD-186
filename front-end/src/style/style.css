@@ -1,0 +1,12 @@
+#navigasi{
+    background-color: aqua;
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+}
+
+header{
+    font-family: 'Bakbak One', cursive;
+}
