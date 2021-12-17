@@ -15,7 +15,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
@@ -26,7 +26,12 @@ from sklearn.svm import SVC
 # Import library Model
 from sklearn.neighbors import KNeighborsClassifier
 
-"""## Data Loading
+from sklearn.neighbors import NearestNeighbors
+from sklearn.metrics.pairwise import cosine_similarity
+
+"""# Model Klasifikasi Pertama
+
+## Data Loading
 
 Mendownload dataset berupa csv file melalui repository github
 
@@ -269,7 +274,6 @@ Membagi data menjadi train dan test set dengan ratio 80:20
 
 y = df_final['Price'] 
 
-# Ambil fitur penting
 li = list(df_final.columns.values[:6])
 X = df_final[li]
 # Split dataset menjadi train dan test
@@ -316,3 +320,118 @@ user_input1 = np.array([int(i) for i in user_input.split()])
 user_input1
 
 prediction[0]
+
+"""# Model Rekomendasi
+
+## Data Loading
+
+Menampilkan Mobile phone yang memiliki kelas harga sesuai prediksi
+"""
+
+samsung1 = df_add.loc[df_add['Brand']=='samsung']
+oppo1 = df_add.loc[df_add['Brand']=='oppo']
+vivo1 = df_add.loc[df_add['Brand']=='vivo']
+xiaomi1 = df_add.loc[df_add['Brand']=='xiaomi']
+realme1 = df_add.loc[df_add['Brand']=='realme']
+
+df_rec = pd.concat([samsung1, vivo1, oppo1, xiaomi1, realme1], ignore_index=True, sort=False)
+df_rec
+
+df_pred = df_rec[df_rec['Price'] == prediction[0]]
+df_pred
+
+"""Meminta input user berdasarkan brand mobile phone"""
+
+brand_input = input()
+df_pred1 = df_pred[df_pred['Brand'] == brand_input]
+df_pred1
+
+"""Membuat dataframe baru dengan satu baris yang berisi data inputan user"""
+
+input_data = [['Input', 'Input', np.nan, user_input1[0], user_input1[1], user_input1[2], user_input1[3], user_input1[4], user_input1[4], prediction[0]]]
+input_row = pd.DataFrame(input_data, columns=['Brand','Model Name','Model Image', 'Weight(g)', 'Width(px)', 'Height(px)', 'ROM(MB)', 'RAM(MB)', 'Battery Capacity(mAh)', 'Price'])
+input_row.index = [700]
+input_row
+
+"""Menggabungkan dataframe input user dengan dataframe rekomendasi"""
+
+df_pred2 = pd.concat([df_pred1, input_row], ignore_index=False, sort=False)
+df_pred2
+
+model_name = pd.DataFrame({'Model Name':df_pred2.index})
+model_name
+
+"""## Data Preparation
+
+### Numerical Scaling
+
+Melakukan scaling pada data-data numerik seperti pada kolom Weight(g),	Width(px),	Height(px),	ROM(MB),	RAM(MB), dan Battery Capacity(mAh). Metode ini digunakan untuk menormalkan jangkauan variabel independen atau fitur data. Dalam pemrosesan data, ini juga dikenal sebagai normalisasi data.
+"""
+
+numerical_features = ['Weight(g)', 'Width(px)', 'Height(px)', 'ROM(MB)', 'RAM(MB)', 'Battery Capacity(mAh)']
+scaler = MinMaxScaler()
+scaler.fit(df_pred2[numerical_features])
+
+df_pred3 = df_pred2.copy()
+df_pred3[numerical_features] = scaler.transform(df_pred3.loc[:, numerical_features])
+df_pred3[numerical_features]
+
+df_pred3
+
+"""## Modeling
+
+Persiapan data yang akan dimodelkan dengan cara drop kolom yang tidak diperlukan
+"""
+
+df_model = df_pred3.drop(["Brand"],axis = 1)
+
+df_model = df_model.drop(["Model Name"],axis = 1)
+df_model = df_model.drop(["Model Image"],axis = 1)
+df_model = df_model.drop(["Price"],axis = 1)
+df_model
+
+"""Menggunakan model Nearest neighbor untuk sistem rekomendasi"""
+
+model = NearestNeighbors(metric='euclidean')
+model.fit(df_model)
+
+"""Membuat model dan fungsi yang bertujuan untuk memberikan rekomendasi aplikasi dari contoh aplikasi yang diinputkan."""
+
+def getRecommendedPhone(modelname,recommend_phone=3,get_similarity=False):
+    # Memberikan banyaknya rekomendasi mobile phone sesuai dengan nilai banyaknya 'recommend_phone'
+    distances,neighbors = model.kneighbors(df_model.loc[modelname],n_neighbors=recommend_phone+1)
+    print(f'Similar Phone for "{modelname[0]}:"')
+    # Menampilkan nama model phone yang memiliki jarak terdekat dari mobile phone yang diinputkan user
+    print(neighbors[0][1:])
+    similar_phone = []
+    for neighbor in neighbors[0][1:]:
+        similar_phone.append(model_name.loc[neighbor][0])
+    if not get_similarity:
+        return similar_phone
+    # Menerapkan nilai similarity dari seluruh mobile phone serupa yang telah melewati proses NearestNeighbors dengan cosine similarity dan mengalikannya dengan 100 agar nilainya berupa persentase
+    similarity = []
+    for phone in similar_phone:
+        sim = cosine_similarity(df_model.loc[[modelname[0]]],df_model.loc[[phone]]).flatten()[0]
+        similarity.append(sim*100)
+    # Membuat dataframe baru yang berisi mobile phone yang direkomendasikan
+    similar_df = pd.DataFrame({'Model':similar_phone,'Similarity':similarity})
+    similar_df.sort_values(by='Similarity',ascending=False)
+    return similar_df
+
+"""## Model Testing
+
+Menampilkan 3 nama model mobile phone yang terdekat dengan inputan user (700)
+"""
+
+recommendation = getRecommendedPhone(model_name.iloc[-1],get_similarity=True)
+recommendation
+
+"""Menampilkan Nama model mobile phone yang di rekomendasikan"""
+
+index = 0
+for row in recommendation['Model']:
+  if recommendation['Similarity'][index] > 50:
+    print(df_pred2['Model Name'][row])
+  else:
+    print('Hasil tidak mendekati spesifikasi anda')
+  index = index + 1
