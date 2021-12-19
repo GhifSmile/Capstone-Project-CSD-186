@@ -24,8 +24,25 @@ main{
 }
 
 #intro1, #intro2, #intro3,#predictsec{
-    height: 650px;
+
     padding: 80px;
 }
 
-/*intro1*/
+/* Responsibilitas */
+@media screen and (max-width: 992px){
+
+    #img2, #img3, #img6{
+        width: 300px;
+    }
+}   
+
+
+@media screen and (max-width: 576px){
+
+    #img2, #img3, #img6{
+        width: 200px;
+    }
+
+}   
+
+
