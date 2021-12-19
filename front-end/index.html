@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Lobster&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-
+    
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/src/style/style.css">
-
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="src\style\style.css" rel="stylesheet" />
-</head>
     
+
+    
+    <title></title>
+</head>
 <body>
-    <header class="masthead">
+    <header>
         <!--Ini navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navigasi">
             <div class="container">
                 
                 <a class="navbar-brand" href="#home">
-                    <img src="./src/image/Artist_find.png" alt="Artist Finder" width="35">
+                    <img src="./src/images/log_caps.png" style='margin-left: 5px;'alt="DM" width="40">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,69 +35,110 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#home">Home</a>
                         </li>
-                        <li class="nav-item" style="margin-left: 10px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#go">Go</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" href="#about">About</a>
                         </li>
                     </ul>
                 </div>
-            
+
             </div> 
         </nav>
 
-        <!--Title Screen-->
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <h1 class="text-black font-weight-bold">Mobile Phone Price Classification </h1>
-                    <hr class="divider" />
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 fs-3 mb-4">Get Price Range and Mobile Phone Recommendation</p>
-                    <p class="text-white-75 fs-3 mb-4">Based on Input Specification</p>
-                </div>
-            </div>
-        </div>
     </header>
     
     <main>
-        <form id="predict" action="{{url_for('predict')}}" method='post'>
-            <div class="row">
-                <div class="col">
-                    <label for='weight' class="text-white-75 form-label"><b>Weight(g)</b></label>
-                    <input type="number" id="floatNumber" class="form-control form-control-lg" name="weight" placeholder="0.00" min="0" required="required" autocomplete="off"><br><br>
+        <section class="container-fluid" id="intro1" style="margin-top: 66px;">
+            <div class="container d-flex justify-content-center" style="padding: 50px;">
+                <div class="p-2 bd-highlight align-self-center">
+                    <img src="./src/images/Asset 1.png" alt="" width="500px">
                 </div>
-                <div class="col">
-                    <label for='width' class="text-white-75 form-label"><b>Width(px)</b></label>
-                    <input type='number' id="floatNumber" class="form-control form-control-lg" name='width' placeholder='0.00' min="0" required='required' autocomplete="off"><br><br>
+                <div class="p-2 bd-highlight">
+                    <img src="./src/images/udin_2.png" alt="" width="400px">
                 </div>
-                <div class="col">
-                    <label for='height' class="text-white-75 form-label"><b>Height(px)</b></label>
-                    <input type='number' id="floatNumber" class="form-control form-control-lg" name='height' placeholder="0.00" min="0" required='required' autocomplete="off"><br><br>
+              </div>
+        </section>
+
+        <section class="container-fluid" id="intro2">
+            <div class="container d-flex justify-content-center" style="padding: 50px;">
+                <div class="p-2 bd-highlight align-self-center">
+                    <img src="./src/images/udin_1.png" alt="" width="400px">
                 </div>
+                <div class="p-2 bd-highlight align-self-center">
+                    <img src="./src/images/Asset 2.png" alt="" width="500px">
+                </div>
+              </div>
+        </section>
+
+        <section class="container-fluid" id="intro3">
+            <div class=" container d-flex justify-content-center" style="padding: 50px;">
+                <div class="p-2 bd-highlight align-self-center">
+                    <img src="./src/images/Asset 4.png " alt="" width="500px">
+                </div>
+                <div class="p-2 bd-highlight">
+                    <img src="./src/images/log_caps.png" alt="" width="400px">
+                </div>
+              </div>
+        </section>
+
+
+        <section class="container-fluid" id="predictsec">
+            <!--Title Screen-->
+            <div class="container">
+
+                <div class="container px-4 px-lg-5 h-100">
+                    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                        <div class="col-lg-8 align-self-end">
+                            <h1 class="text-black font-weight-bold">Mobile Phone Price Classification </h1>
+                            <hr class="divider" />
+                        </div>
+                        <div class="col-lg-8 align-self-baseline">
+                            <p class="text-white-75 fs-3 mb-4">Get Price Range and Mobile Phone Recommendation</p>
+                            <p class="text-white-75 fs-3 mb-4">Based on Input Specification</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="predict" action="{{url_for('predict')}}" method='post'>
+                    <div class="row">
+                        <div class="col">
+                            <label for='weight' class="text-white-75 form-label"><b>Weight(g)</b></label>
+                            <input type="number" id="floatNumber" class="form-control form-control-lg" name="weight" placeholder="0.00" min="0" required="required" autocomplete="off"><br><br>
+                        </div>
+                        <div class="col">
+                            <label for='width' class="text-white-75 form-label"><b>Width(px)</b></label>
+                            <input type='number' id="floatNumber" class="form-control form-control-lg" name='width' placeholder='0.00' min="0" required='required' autocomplete="off"><br><br>
+                        </div>
+                        <div class="col">
+                            <label for='height' class="text-white-75 form-label"><b>Height(px)</b></label>
+                            <input type='number' id="floatNumber" class="form-control form-control-lg" name='height' placeholder="0.00" min="0" required='required' autocomplete="off"><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for='rom' class="text-white-75 form-label"><b>ROM(MB)</b></label>
+                            <input type='number' class="form-control form-control-lg" name='rom' placeholder="0" min="0" step=".01" required='required' autocomplete="off"><br><br>
+                        </div>
+                        <div class="col">
+                            <label for="ram" class="text-white-75 form-label"><b>RAM(MB)</b></label><br>
+                            <input type="number" class="form-control form-control-lg" name="ram" placeholder="0" min="0" required='required' autocomplete="off"><br><br>
+                        </div>
+                        <div class="col">
+                            <label for='battery' class="text-white-75 form-label"><b>Battery Capacity(mAh)</b></label>
+                            <input type='number' class="form-control form-control-lg" name='battery' placeholder="0" min="0" required='required' autocomplete="off"><br><br>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-xl" style="background-color: red; border: none;">Predict</button>
+                    <br>
+                </form>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for='rom' class="text-white-75 form-label"><b>ROM(MB)</b></label>
-                    <input type='number' class="form-control form-control-lg" name='rom' placeholder="0" min="0" step=".01" required='required' autocomplete="off"><br><br>
-                </div>
-                <div class="col">
-                    <label for="ram" class="text-white-75 form-label"><b>RAM(MB)</b></label><br>
-                    <input type="number" class="form-control form-control-lg" name="ram" placeholder="0" min="0" required='required' autocomplete="off"><br><br>
-                </div>
-                <div class="col">
-                    <label for='battery' class="text-white-75 form-label"><b>Battery Capacity(mAh)</b></label>
-                    <input type='number' class="form-control form-control-lg" name='battery' placeholder="0" min="0" required='required' autocomplete="off"><br><br>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-xl">Predict</button>
-            <br>
-    </form>
+        </section>
     </main>
     
     <footer>
 
     </footer>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

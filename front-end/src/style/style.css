@@ -1,12 +1,31 @@
+/*header*/
 #navigasi{
-    background-color: aqua;
+    background-image: linear-gradient(to bottom left, #F25C05, #F28705);
 }
 
-header.masthead {
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 header{
     font-family: 'Bakbak One', cursive;
 }
+
+/*main*/
+
+main{
+    background-image: linear-gradient(to bottom right, #F25C05, #F28705);
+}
+
+
+#predict{
+    margin-top: 10px;
+}
+
+#intro1, #intro2, #intro3,#predictsec{
+    height: 650px;
+    padding: 80px;
+}
+
+/*intro1*/
