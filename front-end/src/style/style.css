@@ -23,8 +23,8 @@ main{
     margin-top: 10px;
 }
 
-#intro1, #intro2, #intro3,#predictsec{
-
+#intro1, #intro2, #intro3, #predictsec{
+    font-family: 'Bakbak One', cursive;
     padding: 80px;
 }
 
