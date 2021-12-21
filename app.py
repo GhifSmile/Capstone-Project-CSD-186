@@ -16,10 +16,10 @@ def predict():
         rom = request.form['rom']
         ram = request.form['ram']
         battery = request.form['battery']
-        brand = request.form['brand']
-        pp.price_prediction(weight, width, height, rom, ram, battery, brand)
+        brand = request.form.get('brand')
+        pr = pp.price_prediction(weight, width, height, rom, ram, battery, brand)
 
-    return render_template("index.html")
+    return render_template("index.html", price=pr[0], rec1=pr[1], rec2=pr[2], rec3=pr[3])
 
 if __name__ == "__main__":
     app.run(debug=True)

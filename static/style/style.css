@@ -1,0 +1,75 @@
+/*header*/
+#navigasi{
+    background-image: linear-gradient(to bottom left, #F25C05, #F28705);
+}
+
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+header{
+    font-family: 'Bakbak One', cursive;
+}
+
+/*main*/
+
+main{
+    background-image: linear-gradient(to bottom right, #F25C05, #F28705);
+}
+
+
+#predict{
+    margin-top: 10px;
+}
+
+#predictsec{
+    font-family: 'Calibri';
+}
+
+#intro1, #intro2, #intro3, #predictsec, #resultClass, #resultRec, #about{
+
+    padding: 80px;
+}
+
+#teks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about{
+    font-family: 'Calibri';
+}
+
+#aboutImg{
+    display: flex;
+    justify-content: center;
+}
+
+#card{
+    margin-top: 25px;
+}
+
+/* Responsibilitas */
+@media screen and (max-width: 992px){
+
+    #img2, #img3, #img6{
+        width: 300px;
+    }
+}   
+
+
+@media screen and (max-width: 576px){
+
+    #img2, #img3, #img6{
+        width: 200px;
+    }
+
+    #card{
+        padding-top: 25px;
+    }
+
+}   
+
+

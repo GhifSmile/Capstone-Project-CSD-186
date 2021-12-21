@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./src/images/log_caps.png">
+    <link rel="icon" href="../static/images/log_caps.png">
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Lobster&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/src/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style/style.css">
     
 
     
@@ -25,7 +23,7 @@
             <div class="container">
                 
                 <a class="navbar-brand" href="#home">
-                    <img src="./src/images/log_caps.png" style='margin-left: 5px;'alt="DM" width="40px">
+                    <img src="../static/images/log_caps.png" style='margin-left: 5px;'alt="DM" width="40px">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,13 +32,13 @@
                 <div class="collapse navbar-collapse text-center" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#intro1">Home</a>
+                            <a class="nav-link active" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#predictsec">Go</a>
+                            <a class="nav-link active" href="#predictsec">Start</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#about">About</a>
+                            <a class="nav-link active" href="#about">About us</a>
                         </li>
                     </ul>
                 </div>
@@ -50,16 +48,16 @@
 
     </header>
     
-    <main>
+    <main id="home">
         
         <section class="container-fluid" id="intro1" style="margin-top: 66px;">
             <div class="row" style="padding: 50px;">
-                <div class="col-lg-7 text-center" >
+                <div id="teks" class="col-lg-7 text-center" >
                     <p style="color:white; font-family:Calibri; font-weight: bold;font-size:30px;">You are tempted by a smartphone that has just been produced?</p>
                     <p style="color:white; font-family:Calibri; font-weight:500;font-size:20px;">happy for your life, happy for others</p>
                 </div>
                 <div class="col-lg-5 text-center">
-                    <img id="img2"src="./src/images/udin_2.png" alt="" width="300px">
+                    <img id="img2" src="../static/images/udin_2.png" alt="" width="300px">
                 </div>
               </div>
         </section>
@@ -67,9 +65,9 @@
         <section class="container-fluid" id="intro2">
             <div class="row" style="padding: 50px;">
                 <div class="col-lg-5 text-center">
-                    <img id="img3" src="./src/images/udin_1.png" alt="" width="300px">
+                    <img id="img3" src="../static/images/udin_1.png" alt="" width="300px">
                 </div>
-                <div class="col-lg-7 text-center">
+                <div id="teks" class="col-lg-7 text-center">
                     <p style="color:white; font-family:Calibri; font-weight: bold;font-size:30px;">The brand hasn't issued a price yet and you should know it</p>
                     <p style="color:white; font-family:Calibri; font-weight:500;font-size:20px;">happy for your life, happy for others</p>
                 </div>
@@ -78,18 +76,18 @@
 
         <section class="container-fluid" id="intro3" >
             <div class="row" style="padding: 50px;">
-                <div class="col-lg-7 text-center ">
+                <div id="teks" class="col-lg-7 text-center ">
                     <p style="color:white; font-family:Calibri; font-weight: bold;font-size:30px;">We are here to help others</p>
                     <p style="color:white; font-family:Calibri; font-weight:500;font-size:20px;">happy for your life, happy for others</p>
                 </div>
                 <div class="col-lg-5 text-center">
-                    <img id="img6" src="./src/images/log_caps.png" alt="" width="300px">
+                    <img id="img6" src="../static/images/log_caps.png" alt="" width="300px">
                 
                 </div>
               </div>
         </section>
 
-
+        <!--Ini bagian sistem machine learning UI-->
         <section class="container-fluid" id="predictsec">
             <!--Title Screen-->
             <div class="container">
@@ -97,12 +95,12 @@
                 <div class="container px-4 px-lg-5 h-100">
                     <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                         <div class="col-lg-8 align-self-end">
-                            <h1 class="text-black font-weight-bold">Mobile Phone Price Classification </h1>
+                            <h1 style="font-weight: bold;">Mobile Phone Price Classification </h1>
                             <hr class="divider" />
                         </div>
                         <div class="col-lg-8 align-self-baseline">
-                            <p class="text-white-75 fs-3 mb-4">Get Price Range and Mobile Phone Recommendation</p>
-                            <p class="text-white-75 fs-3 mb-4">Based on Input Specification</p>
+                            <p class="text-white-75 fs-3 mb-4" style="font-weight:500;">Get Price Range and Mobile Phone Recommendation</p>
+                            <p class="text-white-75 fs-3 mb-4" style="font-weight:500;">Based on Input Specification</p>
                         </div>
                     </div>
                 </div>
@@ -139,18 +137,79 @@
                     <div class="row">
                         <div class="col">
                             <label for='brand' class="text-white-75 form-label"><b>Brand</b></label>
-                            <input type='text' class="form-control form-control-lg" name='brand' placeholder="Brand Name (lowercase)" required='required' autocomplete="off"><br><br>
-                        </div>
+                            <select name="brand" class="form-select" aria-label="Default select example">
+                                <option selected></option>
+                                <option value="samsung">samsung</option>
+                                <option value="oppo">oppo</option>
+                                <option value="vivo">vivo</option>
+                                <option value="realme">realme</option>
+                                <option value="xiaomi">xiaomi</option>
+                              </select>
+                        </div>  
                     </div>
+                    <br>
                     <button class="btn btn-primary btn-xl" style="background-color: red; border: none;">Predict</button>
                     <br>
                 </form>
+            
             </div>
         </section>
+                
+        <section class="container-fluid" id="resultClass">
+            <div class="container text-center">
+                <h1>Price range is</h1>
+                <h2>{{price}}</h2>
+            </div>
+        </section>        
+
+        <section class="container-fluid" id="resultRec">
+            <div class="container text-center">
+                <h1>Recommendations are</h1>
+                <h2>{{rec1}}</h2>
+                <h2>{{rec2}}</h2>
+                <h2>{{rec3}}</h2>
+            </div>
+        </section>
+
+        <!--Ini bagian About Us-->
+        <section id="about" class="container-fluid">
+            
+            <div class="text-center" style="margin-bottom: 100px;">
+                <h1 style="font-weight: bold;">About Us</h1>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div id="card" class="col-lg-6">
+                    <div id="aboutImg">
+                        <img src="../static/images/bang nil.png" alt="Bang Daniel" style="width: 30%;">
+                    </div>
+                    <h5 class="card-title text-center" style="color: white; font-weight: bold; margin-top: 5px;">Daniel Ryan Medwin</h5>
+                    <p class="card-text text-center" style="color: white;">
+                        LU ISI SENDIRI DAH BANG 
+                    </p>
+                </div>
+
+                <div id="card" class="col-lg-6">
+                    <div id="aboutImg">
+                        <img src="../static/images/bang il.png" alt="Bang Daniel" style="width: 30%;">
+                    </div>
+                    <h5 class="card-title text-center" style="color:white;font-weight: bold; margin-top: 5px;">Ghifari Ismail</h5>
+                    <p class="card-text text-center" style="color: white;">
+                        Tidak menyukai banyak hal, tetapi menyukai dia itu pasti. Terkadang berada di bawah kegelisahan yang teramat menekan, rindu yang tak tersampaikan, juga putus harapan, apalagi masalah percintaan. 
+                    </p>
+                </div>
+
+
+            </div>
+            
+        </section>
+
     </main>
     
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ def price_prediction(weight, width, height, rom, ram, battery, brand):
 
   """Mengubah dataset menjadi dataframe"""
 
-  df = pd.read_csv('mobile-price-classification/train.csv')
+  df = pd.read_csv('train.csv')
   df.head()
 
   """Data Understanding"""
@@ -203,7 +203,17 @@ def price_prediction(weight, width, height, rom, ram, battery, brand):
 
   user_input1 = np.array([int(i) for i in user_input])
 
-  print("Price range yang didapatkan adalah:",prediction[0])
+  if prediction[0] == 0:
+    harga = '< 100 USD'
+  elif prediction[0] == 1:
+    harga = '100 - 200 USD'
+  elif prediction[0] == 2:
+    harga = '200 - 400 USD'
+  elif prediction[0] == 3:
+    harga = '>= 400 USD'
+  price_range = harga
+
+  
 
   """# Model Rekomendasi
 
@@ -310,13 +320,16 @@ def price_prediction(weight, width, height, rom, ram, battery, brand):
   recommendation
 
   """Menampilkan Nama model mobile phone yang di rekomendasikan"""
-
+  rekomendasi = []
   index = 0
   for row in recommendation['Model']:
     if recommendation['Similarity'][index] > 50:
-      print(df_pred2['Model Name'][row])
+      rekomendasi.append(df_pred2['Model Name'][row])
     else:
-      print('Hasil tidak mendekati spesifikasi anda')
+      rekomendasi.append('Hasil tidak mendekati spesifikasi anda')
     index = index + 1
+  
+  #print(rekomendasi[0])
+  return str(price_range), rekomendasi[0], rekomendasi[1], rekomendasi[2]
 
 #price_prediction(100, 200, 500, 1000, 2000, 700, "samsung")
