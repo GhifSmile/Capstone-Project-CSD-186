@@ -1,6 +1,6 @@
 /*header*/
 #navigasi{
-    background-image: linear-gradient(to bottom left, #F25C05, #F28705);
+    background-image: linear-gradient(to bottom left, #522546, #311D3F);
 }
 
 .nav-item{
@@ -15,17 +15,18 @@ header{
 /*main*/
 
 main{
-    background-image: linear-gradient(to bottom right, #F25C05, #F28705);
+    background-image: linear-gradient(to bottom right, #e23e57, #b43145, #872534, #5a1822);
     color: white;
 }
 
 
 #predict{
+    font-family: 'Calibri', cursive;
     margin-top: 10px;
 }
 
 #predictsec{
-    font-family: 'Calibri';
+    font-family: 'Bakbak One', cursive;
 }
 
 #intro1, #intro2, #intro3, #predictsec, #resultClass, #resultRec, #about{
@@ -60,7 +61,7 @@ main{
 
 footer{
     font-family: 'Bakbak One', cursive;
-    background-image: linear-gradient(to bottom left, #F25C05, #F28705);
+    background-image: linear-gradient(to bottom left, #311D3F, #522546);
 }
 
 footer > div{
