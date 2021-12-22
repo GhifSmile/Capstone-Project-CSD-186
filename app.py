@@ -19,7 +19,7 @@ def predict():
         brand = request.form.get('brand')
         pr = pp.price_prediction(weight, width, height, rom, ram, battery, brand)
 
-    return render_template("index.html", price=pr[0], rec1=pr[1], rec2=pr[2], rec3=pr[3])
+    return render_template("index.html", price=pr[0], rec1=pr[1], rec2=pr[2], rec3=pr[3], img1=pr[4], img2=pr[5], img3=pr[6])
 
 if __name__ == "__main__":
     app.run(debug=True)

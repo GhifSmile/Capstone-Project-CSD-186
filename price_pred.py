@@ -321,15 +321,20 @@ def price_prediction(weight, width, height, rom, ram, battery, brand):
 
   """Menampilkan Nama model mobile phone yang di rekomendasikan"""
   rekomendasi = []
+  gambar = []
   index = 0
   for row in recommendation['Model']:
     if recommendation['Similarity'][index] > 50:
       rekomendasi.append(df_pred2['Model Name'][row])
+      gambar.append(df_pred2['Model Image'][row])
     else:
       rekomendasi.append('Hasil tidak mendekati spesifikasi anda')
+      gambar.append('Mohon ubah spesifikasi dan brand anda')
     index = index + 1
+    if index == 3:
+      index = 0
   
-  #print(rekomendasi[0])
-  return str(price_range), rekomendasi[0], rekomendasi[1], rekomendasi[2]
+  #print(gambar[0])
+  return str(price_range), rekomendasi[0], rekomendasi[1], rekomendasi[2], gambar[0], gambar[1], gambar[2]
 
 #price_prediction(100, 200, 500, 1000, 2000, 700, "samsung")
