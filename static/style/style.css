@@ -16,6 +16,7 @@ header{
 
 main{
     background-image: linear-gradient(to bottom right, #F25C05, #F28705);
+    color: white;
 }
 
 
@@ -28,8 +29,12 @@ main{
 }
 
 #intro1, #intro2, #intro3, #predictsec, #resultClass, #resultRec, #about{
-
     padding: 80px;
+}
+
+#resultTitl{
+    display: flex;
+    justify-content: center;
 }
 
 #teks{
@@ -49,6 +54,17 @@ main{
 
 #card{
     margin-top: 25px;
+}
+
+/*footer*/
+
+footer{
+    font-family: 'Bakbak One', cursive;
+    background-image: linear-gradient(to bottom left, #F25C05, #F28705);
+}
+
+footer > div{
+    color: white;
 }
 
 /* Responsibilitas */
