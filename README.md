@@ -1,13 +1,12 @@
-# Capstone-Project-CSD-186
-## Capstone Project Tim CSD-186 Program SIB Machine Learning dan Front-End Web
-### Tema yang dipilih: [Utilitas]
-### Judul Proyek: [Sistem Klasifikasi Harga Smartphone Berdasarkan Spesifikasi dan Ekspansinya] 
-### Executive Summary:
-Semakin banyaknya perusahaan-perusahaan pembuat produk handphone atau smartphone, membuat produsen serta konsumen harus dapat menyesuaikan produk terhadap finansial.
-Apa yang menjadi tolak ukur utama dalam pendistribusian produk?
-Siapa yang terlibat dalam penyesuaian finansial produk?
-Mengapa finansial menjadi tolak ukur utama dalam produksi?
-Kapan produk harus diberi kesesuaian finansial?
-Di mana produk harus diberi kesesuaian finansial?
-Bagaimana permasalahan tersebut dapat terselesaikan?
-Proyek ini bertujuan untuk membuat sebuah web aplikasi dengan fitur sistem klasifikasi harga berdasarkan spesifikasi dan ekspansi berupa sistem rekomendasi berdasarkan harga. Kami memilih proyek ini dikarenakan permasalahan yang digunakan cukup umum dan memandang fungsionalitas proyek yang efektif.
+# Capstone Project Tim CSD-186 Program SIB Machine Learning dan Front-End Web
+
+## DM : [Sistem Klasifikasi Harga Smartphone Berdasarkan Spesifikasi dan Ekspansinya] 
+
+<p align="center" style="text-align:center;">
+    <img alt="DM logo" src="https://github.com/danielrymeds/dataset1/blob/main/dicoding/log_caps.png?raw=true" width="300" />
+</p>
+
+### Application Summary:
+DM app atau DepotMobile app merupakan sebuah sistem berbasis machine learning yang bertujuan untuk mengklasifikasi sebuah spesifikasi mobile phone atau telepon genggam, yang kemudian juga akan memberikan rekomendasi handphone brand tertentu dengan jangkauan harga dan spesifikasi yang serupa dengan input user.
+
+Aplikasi ini berbasis web dan mudah, serta cukup ringan untuk digunakan. Aplikasi ini dapat digunakan di berbagai browser dan platform seperti dekstop, mobile, dan lainnya, namun penggunaan pada dekstop web lebih direkomendasikan untuk mendapatkan pengalaman terbaik selama menggunakan aplikasi ini. 
